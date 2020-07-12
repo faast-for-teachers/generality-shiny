@@ -4,6 +4,45 @@ library(quanteda.textmodels)
 library(shiny)
 library(shinythemes)
 library(shinylogs)
+library(aws.s3)
+
+bucketlist(region="", use_https=FALSE,
+           key=Sys.getenv("AWS_ACCESS_KEY_ID"), 
+           secret=Sys.getenv("AWS_SECRET_ACCESS_KEY"))
+
+s3BucketName <- "faast-for-teachers"
+
+saveData <- function(data) {
+    # Create a temporary file to hold the data
+    data <- t(data)
+    file_name <- paste0(
+        paste(
+            get_time_human(),
+            digest(data, algo = "md5"),
+            sep = "_"
+        ),
+        ".csv"
+    )
+    file_path <- file.path(tempdir(), file_name)
+    write.csv(data ,file_path, row.names = FALSE, quote = TRUE)
+    
+    # Upload the file to S3
+    put_object(file = file_path, object = file_name, bucket = s3BucketName)
+}
+
+loadData <- function() {
+    # Get a list of all files
+    file_names <- get_bucket_df(s3BucketName)[["Key"]]
+    # Read all files into a list
+    data <- lapply(file_names, function(x) {
+        object <- get_object(x, s3BucketName)
+        object_data <- readBin(object, "character")
+        read.csv(text = object_data, stringsAsFactors = FALSE)
+    })
+    # Concatenate all data together into one data.frame
+    data <- do.call(rbind, data)
+    data  
+}
 
 a <- read_csv("all-new-data.csv") %>%
     mutate(Why = text) %>% 
@@ -13,12 +52,15 @@ a <- read_csv("all-new-data.csv") %>%
            Why = ifelse(is.na(Why), "blank", Why))
 
 aa <- corpus(a)
-dfm_training <- dfm(aa, stem = TRUE, ngrams = 1)
+dfm_training <- dfm(aa, stem = TRUE)
 m1 <- textmodel_svm(dfm_training, docvars(dfm_training, "code"))
 counter <- 0
 c <- read_csv("coding-frame.csv")
 
 ui <- fluidPage(theme = shinytheme("united"),
+                
+                use_tracking(),
+                
                 tags$style(HTML("thead:first-child > tr:first-child > th {
                 border-top: 0;
                 font-weight: normal;}
