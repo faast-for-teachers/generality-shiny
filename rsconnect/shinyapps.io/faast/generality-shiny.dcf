@@ -1,0 +1,12 @@
+name: generality-shiny
+title: generality-shiny
+username:
+account: faast
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2540643
+bundleId: 3466185
+url: https://faast.shinyapps.io/generality-shiny/
+when: 1596392453.53145
+asMultiple: FALSE
+asStatic: FALSE

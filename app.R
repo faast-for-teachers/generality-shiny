@@ -3,18 +3,10 @@ library(quanteda)
 library(quanteda.textmodels)
 library(shiny)
 library(shinythemes)
-library(shinylogs)
-library(aws.s3)
+library(boxr)
+library(jose)
 
-source("token.R")
-
-# clear out bucket
-
-# list.files("logs", full.names = T) %>%
-#     map(aws.s3::delete_object, bucket = s3BucketName,
-#         key=AWS_ACCESS_KEY_ID,
-#         secret=AWS_SECRET_ACCESS_KEY,
-#         region=AWS_DEFAULT_REGION)
+box_auth_service(token_text = unlist(read_lines('boxr-auth/token.json')))
 
 a <- read_csv("all-new-data.csv") %>%
     mutate(Why = text) %>% 
@@ -26,12 +18,9 @@ a <- read_csv("all-new-data.csv") %>%
 aa <- corpus(a)
 dfm_training <- dfm(aa, stem = TRUE)
 m1 <- textmodel_svm(dfm_training, docvars(dfm_training, "code"))
-counter <- 0
 c <- read_csv("coding-frame.csv")
 
 ui <- fluidPage(theme = shinytheme("united"),
-                
-                use_tracking(),
                 
                 tags$style(HTML("thead:first-child > tr:first-child > th {
                 border-top: 0;
@@ -48,7 +37,7 @@ ui <- fluidPage(theme = shinytheme("united"),
                              textInput("text",
                                        "Why?"),
                              actionButton("button", "Run!"),
-                             textOutput("need_to_select"),
+                             textOutput("input_confirmation"),
                              
                              p(),
                              hr(),
@@ -86,9 +75,7 @@ ui <- fluidPage(theme = shinytheme("united"),
                 
 )
 
-server <- function(input, output) {
-    
-    track_usage(storage_mode = store_json(path = "logs/"))
+server <- function(input, output, session) {
     
     output$coding_frame <- renderTable(c)
     
@@ -133,7 +120,7 @@ server <- function(input, output) {
             o %>% 
                 gather(Code, Probability) %>% 
                 arrange(desc(Probability)) %>% 
-                left_join(c) %>% 
+                left_join(c, by = "Code") %>% 
                 select(Code, Description, Probability)
         }, hover = TRUE, bordered = FALSE, striped = FALSE)
         
@@ -143,41 +130,67 @@ server <- function(input, output) {
         
     })
     
-    # observeEvent(input$button, {
-    # 
-    #     if(input$checkbox != "") {
-    #         text <- "Did not select an option!"
-    #     }
-    # 
-    #     output$need_to_select <- renderText(text)
-    # })
+    out <- reactiveValues(data = tibble(text = "", feedback = "", time = "", session = ""))
+    vals <- reactiveValues(counter = 0, counter_feedback = 0)
+    vals1 <- reactiveValues(text = "")
+    vals2 <- reactiveValues(counter_feedback = 0)
+    vals3 <- reactiveValues(text = "")
     
-    
-    observeEvent(input$feedback_button, {
+    observeEvent(input$button | input$feedback_button, {
         
-        if (counter <= 0) {
-            text <- "Thank you for your feedback!"
-        } else {
-            text <- "Thank you for your feedback, again!" 
+        if (input$button) {
+            out$data$text[vals$counter] <- input$text 
+            out$data$time[vals$counter] <- as.character("today")
+            out$data$session[vals$counter] <- session$token
+            
+            if (vals$counter <= 0) {
+                text <- "Thank you!"
+            } else {
+                text <- "Thank you, again!" 
+            }
+            
+            output$input_confirmation <- renderText(text)
         }
         
-        output$feedback_confirmation <- renderText(text)
-        print(str_c("***** user entered the following input and feedback: ", input$text, " ", input$checkbox, " feedback: ", input$feedback))
+        if (input$feedback_button) {
+            out$data$feedback[vals$counter] <- input$feedback
+            out$data$time[vals$counter] <- as.character("today")
+            out$data$session[vals$counter] <- session$token
+            
+            if (vals2$counter_feedback <= 0) {
+                text <- "Thank you for your feedback!"
+                
+            } else {
+                text <- "Thank you for your feedback, again!" 
+            }
+            
+            output$feedback_confirmation <- renderText(text)
+        }
+        
+        vals$counter <- vals$counter + 1
+        vals$counter <- vals$counter_feedback + 1
+        
+        f <- str_c("logs/", "today", "-", round(runif(1) * 10000, 0), ".csv")
+        
+        if (!file.exists("tmp-file.csv")) {
+            write_csv(out$data, "tmp-file.csv")
+        }
+        
+        if (file.exists("tmp-file.csv")) {
+            file <- read_csv("tmp-file.csv")
+            bind_rows(out$data, file) %>% 
+                write_csv("tmp-file.csv")
+        }
+        
     })
-    
+
+    onSessionEnded(function() {
+        data_to_write <- read_csv("tmp-file.csv")
+        boxr::box_write(data_to_write, dir_id = "119380520464", file_name = 'test.csv')
+    })
+
 }
 
-# Stop
-
-onStop(function() {
-    list.files("logs", full.names = TRUE) %>% 
-        map(put_object, bucket = s3BucketName,
-            key=AWS_ACCESS_KEY_ID,
-            secret=AWS_SECRET_ACCESS_KEY,
-            region=AWS_DEFAULT_REGION)
-})
-
 # Run the application 
-
 
 shinyApp(ui = ui, server = server)

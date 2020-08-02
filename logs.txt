@@ -1,0 +1,392 @@
+2020-07-06T12:47:33.022625+00:00 shinyapps[2540643]: Server version: 1.8.2.1-12
+2020-07-06T12:47:33.022646+00:00 shinyapps[2540643]: LANG: en_US.UTF-8
+2020-07-06T12:47:33.022647+00:00 shinyapps[2540643]: R version: 4.0.0
+2020-07-06T12:47:33.022648+00:00 shinyapps[2540643]: shiny version: 1.5.0
+2020-07-06T12:47:33.022648+00:00 shinyapps[2540643]: rmarkdown version: 2.1
+2020-07-06T12:47:33.022658+00:00 shinyapps[2540643]: knitr version: 1.29
+2020-07-06T12:47:33.022711+00:00 shinyapps[2540643]: htmltools version: 0.5.0
+2020-07-06T12:47:33.022648+00:00 shinyapps[2540643]: httpuv version: 1.5.4
+2020-07-06T12:47:33.022675+00:00 shinyapps[2540643]: RJSONIO version: (none)
+2020-07-06T12:47:33.022661+00:00 shinyapps[2540643]: jsonlite version: 1.7.0
+2020-07-06T12:47:33.188529+00:00 shinyapps[2540643]: Starting R with process ID: '25'
+2020-07-06T12:47:33.022893+00:00 shinyapps[2540643]: Using pandoc: /opt/connect/ext/pandoc2
+2020-07-06T12:47:33.185482+00:00 shinyapps[2540643]: Using jsonlite for JSON processing
+2020-07-06T12:47:33.188528+00:00 shinyapps[2540643]: 
+2020-07-06T12:47:34.034812+00:00 shinyapps[2540643]: ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+2020-07-06T12:47:34.039091+00:00 shinyapps[2540643]: ✔ ggplot2 3.3.1     ✔ purrr   0.3.4
+2020-07-06T12:47:34.039092+00:00 shinyapps[2540643]: ✔ tidyr   1.0.3     ✔ stringr 1.4.0
+2020-07-06T12:47:34.039091+00:00 shinyapps[2540643]: ✔ tibble  3.0.1     ✔ dplyr   0.8.5
+2020-07-06T12:47:34.039092+00:00 shinyapps[2540643]: ✔ readr   1.3.1     ✔ forcats 0.5.0
+2020-07-06T12:47:34.118434+00:00 shinyapps[2540643]: ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+2020-07-06T12:47:34.118435+00:00 shinyapps[2540643]: ✖ dplyr::filter() masks stats::filter()
+2020-07-06T12:47:34.118435+00:00 shinyapps[2540643]: ✖ dplyr::lag()    masks stats::lag()
+2020-07-06T12:47:35.256704+00:00 shinyapps[2540643]: 
+2020-07-06T12:47:35.249461+00:00 shinyapps[2540643]: Package version: 2.0.1
+2020-07-06T12:47:35.257381+00:00 shinyapps[2540643]: 
+2020-07-06T12:47:35.251904+00:00 shinyapps[2540643]: Parallel computing: 2 of 16 threads used.
+2020-07-06T12:47:35.257380+00:00 shinyapps[2540643]: The following object is masked from ‘package:utils’:
+2020-07-06T12:47:35.252065+00:00 shinyapps[2540643]: See https://quanteda.io for tutorials and examples.
+2020-07-06T12:47:35.256701+00:00 shinyapps[2540643]: 
+2020-07-06T12:47:35.256703+00:00 shinyapps[2540643]: Attaching package: ‘quanteda’
+2020-07-06T12:47:35.257381+00:00 shinyapps[2540643]: 
+2020-07-06T12:47:35.257381+00:00 shinyapps[2540643]:     View
+2020-07-06T12:47:35.833228+00:00 shinyapps[2540643]: Failed to create bus connection: No such file or directory
+2020-07-06T12:47:36.069465+00:00 shinyapps[2540643]: Parsed with column specification:
+2020-07-06T12:47:35.833630+00:00 shinyapps[2540643]: Warning in system("timedatectl", intern = TRUE) :
+2020-07-06T12:47:35.833632+00:00 shinyapps[2540643]:   running command 'timedatectl' had status 1
+2020-07-06T12:47:36.069466+00:00 shinyapps[2540643]: cols(
+2020-07-06T12:47:36.069469+00:00 shinyapps[2540643]:   ID_in_7C = col_logical()
+2020-07-06T12:47:36.069469+00:00 shinyapps[2540643]: )
+2020-07-06T12:47:36.069467+00:00 shinyapps[2540643]:   lesson = col_character(),
+2020-07-06T12:47:36.069467+00:00 shinyapps[2540643]:   ID = col_double(),
+2020-07-06T12:47:36.069468+00:00 shinyapps[2540643]:   text = col_character(),
+2020-07-06T12:47:36.069469+00:00 shinyapps[2540643]:   code = col_double(),
+2020-07-06T12:47:36.069468+00:00 shinyapps[2540643]:   gen_or_spec = col_character(),
+2020-07-06T12:47:36.085529+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T12:47:36.561870+00:00 shinyapps[2540643]: Parsed with column specification:
+2020-07-06T12:47:36.561872+00:00 shinyapps[2540643]: cols(
+2020-07-06T12:47:36.561873+00:00 shinyapps[2540643]:   Code = col_character(),
+2020-07-06T12:47:36.574263+00:00 shinyapps[2540643]: Listening on http://127.0.0.1:42537
+2020-07-06T12:47:36.561873+00:00 shinyapps[2540643]:   Description = col_character()
+2020-07-06T12:47:36.561874+00:00 shinyapps[2540643]: )
+2020-07-06T12:47:36.574261+00:00 shinyapps[2540643]: 
+2020-07-06T12:47:53.470793+00:00 shinyapps[2540643]: [1] "***** user entered the following: TESTING ME! General"
+2020-07-06T12:47:53.473569+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T12:47:53.590881+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T12:47:58.768029+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  General feedback: another test"
+2020-07-06T15:19:56.457475+00:00 shinyapps[2540643]: Server version: 1.8.2.1-12
+2020-07-06T15:19:56.457500+00:00 shinyapps[2540643]: LANG: en_US.UTF-8
+2020-07-06T15:19:56.457501+00:00 shinyapps[2540643]: R version: 4.0.0
+2020-07-06T15:19:56.457501+00:00 shinyapps[2540643]: shiny version: 1.5.0
+2020-07-06T15:19:56.457502+00:00 shinyapps[2540643]: httpuv version: 1.5.4
+2020-07-06T15:19:56.457545+00:00 shinyapps[2540643]: rmarkdown version: 2.1
+2020-07-06T15:19:56.457546+00:00 shinyapps[2540643]: knitr version: 1.29
+2020-07-06T15:19:56.457559+00:00 shinyapps[2540643]: jsonlite version: 1.7.0
+2020-07-06T15:19:56.457560+00:00 shinyapps[2540643]: RJSONIO version: (none)
+2020-07-06T15:19:56.457572+00:00 shinyapps[2540643]: htmltools version: 0.5.0
+2020-07-06T15:19:56.457763+00:00 shinyapps[2540643]: Using pandoc: /opt/connect/ext/pandoc2
+2020-07-06T15:19:56.727495+00:00 shinyapps[2540643]: Using jsonlite for JSON processing
+2020-07-06T15:19:56.731449+00:00 shinyapps[2540643]: 
+2020-07-06T15:19:56.731450+00:00 shinyapps[2540643]: Starting R with process ID: '25'
+2020-07-06T15:19:57.959053+00:00 shinyapps[2540643]: ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+2020-07-06T15:19:57.963828+00:00 shinyapps[2540643]: ✔ tibble  3.0.1     ✔ dplyr   0.8.5
+2020-07-06T15:19:57.963828+00:00 shinyapps[2540643]: ✔ tidyr   1.0.3     ✔ stringr 1.4.0
+2020-07-06T15:19:58.052431+00:00 shinyapps[2540643]: ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+2020-07-06T15:19:58.052433+00:00 shinyapps[2540643]: ✖ dplyr::filter() masks stats::filter()
+2020-07-06T15:19:58.052434+00:00 shinyapps[2540643]: ✖ dplyr::lag()    masks stats::lag()
+2020-07-06T15:19:57.963827+00:00 shinyapps[2540643]: ✔ ggplot2 3.3.1     ✔ purrr   0.3.4
+2020-07-06T15:19:57.963829+00:00 shinyapps[2540643]: ✔ readr   1.3.1     ✔ forcats 0.5.0
+2020-07-06T15:19:59.279972+00:00 shinyapps[2540643]: Package version: 2.0.1
+2020-07-06T15:19:59.282256+00:00 shinyapps[2540643]: See https://quanteda.io for tutorials and examples.
+2020-07-06T15:19:59.282130+00:00 shinyapps[2540643]: Parallel computing: 2 of 16 threads used.
+2020-07-06T15:19:59.285094+00:00 shinyapps[2540643]: 
+2020-07-06T15:19:59.285095+00:00 shinyapps[2540643]: Attaching package: ‘quanteda’
+2020-07-06T15:19:59.285096+00:00 shinyapps[2540643]: 
+2020-07-06T15:19:59.285746+00:00 shinyapps[2540643]: The following object is masked from ‘package:utils’:
+2020-07-06T15:19:59.285747+00:00 shinyapps[2540643]: 
+2020-07-06T15:19:59.285748+00:00 shinyapps[2540643]:     View
+2020-07-06T15:19:59.285748+00:00 shinyapps[2540643]: 
+2020-07-06T15:20:00.029862+00:00 shinyapps[2540643]: Failed to create bus connection: No such file or directory
+2020-07-06T15:20:00.030404+00:00 shinyapps[2540643]: Warning in system("timedatectl", intern = TRUE) :
+2020-07-06T15:20:00.030406+00:00 shinyapps[2540643]:   running command 'timedatectl' had status 1
+2020-07-06T15:20:00.348630+00:00 shinyapps[2540643]: Parsed with column specification:
+2020-07-06T15:20:00.348632+00:00 shinyapps[2540643]: cols(
+2020-07-06T15:20:00.348634+00:00 shinyapps[2540643]:   ID = col_double(),
+2020-07-06T15:20:00.348634+00:00 shinyapps[2540643]:   lesson = col_character(),
+2020-07-06T15:20:00.348634+00:00 shinyapps[2540643]:   gen_or_spec = col_character(),
+2020-07-06T15:20:00.348635+00:00 shinyapps[2540643]:   text = col_character(),
+2020-07-06T15:20:00.348635+00:00 shinyapps[2540643]:   code = col_double(),
+2020-07-06T15:20:00.348635+00:00 shinyapps[2540643]:   ID_in_7C = col_logical()
+2020-07-06T15:20:00.348636+00:00 shinyapps[2540643]: )
+2020-07-06T15:20:00.372605+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:00.860257+00:00 shinyapps[2540643]: Parsed with column specification:
+2020-07-06T15:20:00.860260+00:00 shinyapps[2540643]:   Code = col_character(),
+2020-07-06T15:20:00.860259+00:00 shinyapps[2540643]: cols(
+2020-07-06T15:20:00.860261+00:00 shinyapps[2540643]: )
+2020-07-06T15:20:00.874257+00:00 shinyapps[2540643]: 
+2020-07-06T15:20:00.874259+00:00 shinyapps[2540643]: Listening on http://127.0.0.1:38019
+2020-07-06T15:20:00.860260+00:00 shinyapps[2540643]:   Description = col_character()
+2020-07-06T15:20:04.846253+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:20:04.848788+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:04.980593+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:06.994528+00:00 shinyapps[2540643]: [1] "***** user entered the following: asdfs General"
+2020-07-06T15:20:06.996974+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:07.045173+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:09.224572+00:00 shinyapps[2540643]: [1] "***** user entered the following: asdfs Neither/I'm unsure"
+2020-07-06T15:20:09.318636+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:09.227090+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:10.326709+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:20:10.558812+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:20:10.329254+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:10.376721+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:10.561280+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:10.616920+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:18.615309+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:20:18.617836+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:18.739004+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:19.792054+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:20:19.794652+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:19.846652+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:24.536171+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:20:24.538815+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:24.591759+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:26.023294+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:20:26.116686+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:26.025892+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:42.684360+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:20:42.736170+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:42.686853+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:45.097129+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:20:45.099614+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:45.151800+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:48.948075+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:20:48.950564+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:20:49.023560+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:58.158245+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:20:58.225050+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:20:58.160841+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:07.903821+00:00 shinyapps[2540643]: [1] "***** user entered the following: Because its focused on understanding the specifics of this flower. I don't know yet if other flowers work the same way. Specific"
+2020-07-06T15:21:07.906265+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:07.952317+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:20.931978+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:21:20.934366+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:21.020769+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:21.316563+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:21:21.319000+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:21.425864+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:23.750207+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:21:23.817670+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:23.752616+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:25.377916+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:21:25.380368+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:25.429179+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:25.803049+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:21:25.805688+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:25.903752+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:26.469653+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:26.467142+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:21:26.524302+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:29.254526+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Neither/I'm unsure"
+2020-07-06T15:21:29.256976+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:29.309872+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:32.696032+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:21:32.747715+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:21:32.698545+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:21:36.250605+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: Because its focused on understanding the specifics of this flower. I don't know yet if other flowers work the same way. Specific feedback: Yeah I think that's what I'm focused on"
+2020-07-06T15:22:33.329438+00:00 shinyapps[2540643]: [1] "***** user entered the following: I think all flowers work this way General"
+2020-07-06T15:22:33.332044+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:33.413685+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:22:41.868284+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:41.918447+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:22:41.865807+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:22:43.205865+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:22:43.208309+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:43.318586+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:22:43.458535+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:22:43.461353+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:43.519163+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:22:43.998945+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:22:44.001359+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:44.050191+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:22:47.079128+00:00 shinyapps[2540643]: [1] "***** user entered the following: fasdf Specific"
+2020-07-06T15:22:47.081938+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:47.132685+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:22:48.468912+00:00 shinyapps[2540643]: [1] "***** user entered the following: fasdf General"
+2020-07-06T15:22:48.471365+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:22:48.520050+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:23:04.447346+00:00 shinyapps[2540643]: [1] "***** user entered the following: I think this is good General"
+2020-07-06T15:23:04.449843+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:23:04.507800+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:23:11.478607+00:00 shinyapps[2540643]: [1] "***** user entered the following:  General"
+2020-07-06T15:23:11.481947+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:23:11.554413+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:23:11.637183+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I think all flowers work this way General feedback: This had a really high probability of code 0"
+2020-07-06T15:23:19.685008+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  General feedback: It was accurate."
+2020-07-06T15:23:35.000865+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:23:34.998429+00:00 shinyapps[2540643]: [1] "***** user entered the following:  Specific"
+2020-07-06T15:23:35.049770+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:23:35.539599+00:00 shinyapps[2540643]: [1] "***** user entered the following: I think that when I exlain something it's always general. beacuse that's the way it is. General"
+2020-07-06T15:23:35.606956+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:23:35.542125+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:23:51.025950+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:23:52.766038+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:23:54.069885+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:23:54.429728+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:23:54.664666+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:23:54.766165+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:24:09.706064+00:00 shinyapps[2540643]: [1] "***** user entered the following: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure"
+2020-07-06T15:24:09.708569+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:24:09.758584+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:24:12.434329+00:00 shinyapps[2540643]: [1] "***** user entered the following: the smell is very specific Specific"
+2020-07-06T15:24:12.436830+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:24:12.485170+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:24:31.815177+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: the smell is very specific Specific feedback: this is here"
+2020-07-06T15:24:32.879346+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: the smell is very specific Specific feedback: this is here"
+2020-07-06T15:24:35.247872+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: the smell is very specific Specific feedback: asdf this is here"
+2020-07-06T15:24:35.723753+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: the smell is very specific Specific feedback: asdf this is here"
+2020-07-06T15:24:35.871710+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: the smell is very specific Specific feedback: asdf this is here"
+2020-07-06T15:24:43.838443+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:48.518527+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:24:51.955283+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:52.443509+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:52.687306+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:52.919526+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:53.128114+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:53.329033+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:53.436413+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:53.688819+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:53.814819+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:53.978258+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:54.214880+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:54.541093+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:24:54.420003+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback: I don't know what the difference is between specific phenomenon and phenomenon in general Neither/I'm unsure feedback: I don't think this is how we'd want an \"I don't know\" response to be recorded"
+2020-07-06T15:27:48.690946+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:48.926148+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:49.028525+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:49.202966+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:49.369317+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:49.524271+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:51.493739+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:51.657765+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:51.892525+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:52.009686+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:53.109302+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:53.349477+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:53.449309+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:27:53.686154+00:00 shinyapps[2540643]: [1] "***** user entered the following input and feedback:  Specific feedback: I chose specific with no explanation.  That's right!"
+2020-07-06T15:28:03.764554+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:03.767046+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:03.817580+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:04.505269+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:04.502778+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:04.555297+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:05.104682+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:05.158421+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:05.107241+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:05.291430+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:05.288908+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:05.340601+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:05.537380+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:05.539834+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:05.640153+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:05.591328+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:05.637720+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:05.689043+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:05.890159+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:05.943951+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:06.016817+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.067069+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:05.892645+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.014235+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:06.178659+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:06.181323+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.239650+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:06.355357+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:06.358077+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.407608+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:06.537536+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:06.591589+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:06.715338+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:06.717991+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.540064+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.768550+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:06.887709+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:06.890218+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:06.939225+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:07.067395+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:07.069948+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:07.119743+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:07.252583+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:07.255423+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:07.311172+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:07.534002+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:07.587225+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:07.536476+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:07.629066+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:07.631580+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:07.683129+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:07.880751+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:07.883294+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:07.932782+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:08.043044+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:08.045597+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:08.103332+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:08.210902+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:08.208313+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:08.261494+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:08.385683+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:08.388166+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:08.437117+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:08.607381+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:08.556586+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:08.724786+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:08.554143+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:08.727450+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:08.792445+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:08.883752+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:08.886254+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:08.950292+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:09.210957+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:09.137933+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:09.141315+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:09.250316+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:09.247696+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:09.301365+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T15:28:09.499112+00:00 shinyapps[2540643]: [1] "***** user entered the following: Let's be annoying!!!! Specific"
+2020-07-06T15:28:09.501681+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T15:28:09.560348+00:00 shinyapps[2540643]: Joining, by = "Code"
+2020-07-06T18:24:15.843159+00:00 shinyapps[2540643]: Server version: 1.8.2.1-12
+2020-07-06T18:24:15.843183+00:00 shinyapps[2540643]: shiny version: 1.5.0
+2020-07-06T18:24:15.843183+00:00 shinyapps[2540643]: httpuv version: 1.5.4
+2020-07-06T18:24:15.843193+00:00 shinyapps[2540643]: rmarkdown version: 2.1
+2020-07-06T18:24:15.843197+00:00 shinyapps[2540643]: knitr version: 1.29
+2020-07-06T18:24:15.843225+00:00 shinyapps[2540643]: jsonlite version: 1.7.0
+2020-07-06T18:24:15.843232+00:00 shinyapps[2540643]: RJSONIO version: (none)
+2020-07-06T18:24:15.843181+00:00 shinyapps[2540643]: LANG: en_US.UTF-8
+2020-07-06T18:24:15.843182+00:00 shinyapps[2540643]: R version: 4.0.0
+2020-07-06T18:24:15.843232+00:00 shinyapps[2540643]: htmltools version: 0.5.0
+2020-07-06T18:24:15.843410+00:00 shinyapps[2540643]: Using pandoc: /opt/connect/ext/pandoc2
+2020-07-06T18:24:16.078188+00:00 shinyapps[2540643]: Using jsonlite for JSON processing
+2020-07-06T18:24:16.081878+00:00 shinyapps[2540643]: 
+2020-07-06T18:24:16.081878+00:00 shinyapps[2540643]: Starting R with process ID: '24'
+2020-07-06T18:24:17.109692+00:00 shinyapps[2540643]: ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
+2020-07-06T18:24:17.113929+00:00 shinyapps[2540643]: ✔ ggplot2 3.3.1     ✔ purrr   0.3.4
+2020-07-06T18:24:17.113930+00:00 shinyapps[2540643]: ✔ tibble  3.0.1     ✔ dplyr   0.8.5
+2020-07-06T18:24:17.113931+00:00 shinyapps[2540643]: ✔ tidyr   1.0.3     ✔ stringr 1.4.0
+2020-07-06T18:24:17.113931+00:00 shinyapps[2540643]: ✔ readr   1.3.1     ✔ forcats 0.5.0
+2020-07-06T18:24:17.192822+00:00 shinyapps[2540643]: ✖ dplyr::filter() masks stats::filter()
+2020-07-06T18:24:17.192821+00:00 shinyapps[2540643]: ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+2020-07-06T18:24:17.192823+00:00 shinyapps[2540643]: ✖ dplyr::lag()    masks stats::lag()
+2020-07-06T18:24:18.324693+00:00 shinyapps[2540643]: Package version: 2.0.1
+2020-07-06T18:24:18.326841+00:00 shinyapps[2540643]: See https://quanteda.io for tutorials and examples.
+2020-07-06T18:24:18.326703+00:00 shinyapps[2540643]: Parallel computing: 2 of 16 threads used.
+2020-07-06T18:24:18.329196+00:00 shinyapps[2540643]: 
+2020-07-06T18:24:18.329817+00:00 shinyapps[2540643]: The following object is masked from ‘package:utils’:
+2020-07-06T18:24:18.329198+00:00 shinyapps[2540643]: 
+2020-07-06T18:24:18.329197+00:00 shinyapps[2540643]: Attaching package: ‘quanteda’
+2020-07-06T18:24:18.329818+00:00 shinyapps[2540643]: 
+2020-07-06T18:24:18.329818+00:00 shinyapps[2540643]: 
+2020-07-06T18:24:18.329818+00:00 shinyapps[2540643]:     View
+2020-07-06T18:24:19.270449+00:00 shinyapps[2540643]: Parsed with column specification:
+2020-07-06T18:24:19.270450+00:00 shinyapps[2540643]: cols(
+2020-07-06T18:24:19.024136+00:00 shinyapps[2540643]: Failed to create bus connection: No such file or directory
+2020-07-06T18:24:19.024535+00:00 shinyapps[2540643]: Warning in system("timedatectl", intern = TRUE) :
+2020-07-06T18:24:19.024536+00:00 shinyapps[2540643]:   running command 'timedatectl' had status 1
+2020-07-06T18:24:19.270451+00:00 shinyapps[2540643]:   ID = col_double(),
+2020-07-06T18:24:19.270452+00:00 shinyapps[2540643]:   lesson = col_character(),
+2020-07-06T18:24:19.270452+00:00 shinyapps[2540643]:   gen_or_spec = col_character(),
+2020-07-06T18:24:19.270453+00:00 shinyapps[2540643]:   text = col_character(),
+2020-07-06T18:24:19.270453+00:00 shinyapps[2540643]:   code = col_double(),
+2020-07-06T18:24:19.270453+00:00 shinyapps[2540643]:   ID_in_7C = col_logical()
+2020-07-06T18:24:19.270454+00:00 shinyapps[2540643]: )
+2020-07-06T18:24:19.291684+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T18:24:19.741885+00:00 shinyapps[2540643]: Parsed with column specification:
+2020-07-06T18:24:19.741888+00:00 shinyapps[2540643]:   Code = col_character(),
+2020-07-06T18:24:19.741887+00:00 shinyapps[2540643]: cols(
+2020-07-06T18:24:19.741888+00:00 shinyapps[2540643]:   Description = col_character()
+2020-07-06T18:24:19.741888+00:00 shinyapps[2540643]: )
+2020-07-06T18:24:19.754851+00:00 shinyapps[2540643]: 
+2020-07-06T18:24:19.754852+00:00 shinyapps[2540643]: Listening on http://127.0.0.1:37282
+2020-07-06T18:24:51.015722+00:00 shinyapps[2540643]: [1] "***** user entered the following: testing General"
+2020-07-06T18:24:51.018112+00:00 shinyapps[2540643]: Warning: ngrams argument is not used.
+2020-07-06T18:24:51.127205+00:00 shinyapps[2540643]: Joining, by = "Code"
