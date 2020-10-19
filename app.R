@@ -6,8 +6,6 @@ library(shinythemes)
 library(boxr)
 library(jose)
 
-box_auth_service(token_text = unlist(read_lines('boxr-auth/token.json')))
-
 a <- read_csv("all-new-data.csv") %>%
     mutate(Why = text) %>% 
     mutate(Why = str_c(Why, " ", lesson, " ", gen_or_spec)) %>%
@@ -20,6 +18,8 @@ dfm_training <- dfm(aa, stem = TRUE)
 m1 <- textmodel_svm(dfm_training, docvars(dfm_training, "code"))
 c <- read_csv("coding-frame.csv")
 
+box_auth_service(token_text = unlist(read_lines('boxr-auth/token.json')))
+
 ui <- fluidPage(theme = shinytheme("united"),
                 
                 tags$style(HTML("thead:first-child > tr:first-child > th {
@@ -27,8 +27,16 @@ ui <- fluidPage(theme = shinytheme("united"),
                 font-weight: normal;}
                                 ")),
                 titlePanel("Generality Embedded Assessment Classifier"),
-                tabsetPanel(
+                tabsetPanel(id = "maintabset",
+                    tabPanel("Enter Username",
+                             value = "username",
+                             p(),
+                             textInput("username",
+                                       "Please enter your username (optional)"),
+                             actionButton("next_screen", "Next tab"),
+                    ),
                     tabPanel("Response Entry",
+                             value = "entry",
                              p(),
                              radioButtons("checkbox",
                                           "Do you think your explanation should explain the specific phenomenon or the phenomenon in general?",
@@ -36,42 +44,47 @@ ui <- fluidPage(theme = shinytheme("united"),
                                           selected = ""),
                              textInput("text",
                                        "Why?"),
-                             actionButton("button", "Run!"),
-                             textOutput("input_confirmation"),
-                             
+                             actionButton("button", "Run!")
+                             #textOutput("input_confirmation")
+
+                    ),
+                    tabPanel("Classification and Feedback", 
+                             value = "feedback",
                              p(),
-                             hr(),
                              textOutput("pred_code_is"),
                              p(),
                              textOutput("pred_class"),
                              br(),
                              textOutput("pred_prob_is"),
                              p(),
-                             tableOutput("pred_table")
-                    ),
-                    tabPanel("Feedback", 
+                             tableOutput("pred_table"),
                              p(),
+                             hr(),
                              textInput("feedback", 
                                        "What do you think of the predicted code (or code probabilities)?"),
                              actionButton("feedback_button",
                                           "Enter feedback"),
-                             p(),
-                             textOutput("feedback_confirmation")
+                             p()
+                             # textOutput("feedback_confirmation")
                     ),
                     tabPanel("More Info. and Contact",
+                             value = "moreinfo",
+                             h2("Thanks!"),
                              p(),
-                             p("Here is additional information and our e-mail addresses:"),
+                             p("Here is additional information about this project and our contact information"),
                              tags$ul(
                                  tags$li(p("This classifier was trained on 1,021 embedded assessment responses from 6th and 7th grade students.")),
                                  tags$li(p("It was established to have satisfactory reliable for the six-code coding frame used (percentage agreement = .716; Cohen's Kappa = .621); see the results of the validation here: http://rpubs.com/jmichaelrosenberg/537982")),
                                  tags$li(p("More information can be found here: http://www.christinakrist.org/uploads/7/0/0/7/70078653/kristrosenbergicls2016revised.pdf")),
                                  tags$li(p("Source code (not including training data) is available here: https://gist.github.com/jrosen48/6b5051640975d53d2f5d3b88f8c6a3fe")),
                                  tags$li(p("Note that we log all content entered to this app (but no information who is entering the content or about you)."),
-                                         tags$li(p("Please contact Joshua Rosenberg (jmrosenberg@utk.edu) and Christina Krist (ckrist@illinois.edu) with any questions about this!"))
+                                         tags$li(p("Please contact Christina Krist (ckrist@illinois.edu), Eric Kuo (ekuo@illinois.edu), and Joshua Rosenberg (jmrosenberg@utk.edu) with any questions about this!"))
                                  )
                              )
                              
-                    ))
+                    )),
+                p(),
+                p("Please note that we save what you type into this app for research purposes. If you have any questions about this application, your response and how we are using the data generated from this app, or anything else at all, please check out the 'More Info. and Contact' tab")
                 
 )
 
@@ -79,13 +92,29 @@ server <- function(input, output, session) {
     
     output$coding_frame <- renderTable(c)
     
+    observeEvent(input$next_screen, {
+        updateTabsetPanel(session, 
+                          "maintabset",
+                          selected = "entry")
+    })
+    
+    observeEvent(input$button, {
+        updateTabsetPanel(session, 
+                          "maintabset",
+                          selected = "feedback")
+    })
+    
+    observeEvent(input$feedback_button, {
+        updateTabsetPanel(session, 
+                          "maintabset",
+                          selected = "moreinfo")
+    })
+    
     observeEvent(input$button, {
         
         validate(
             need(input$checkbox != "", "Did not select an option!")
         )
-        
-        print(str_c("***** user entered the following: ", input$text, " ", input$checkbox))
         
         checkbox <- input$checkbox
         text <- ifelse(input$text == "", "blank", input$text)
@@ -130,7 +159,7 @@ server <- function(input, output, session) {
         
     })
     
-    out <- reactiveValues(data = tibble(text = "", feedback = "", time = "", session = ""))
+    out <- reactiveValues(data = tibble(username = "", text = "", feedback = "", time = "", session = ""))
     vals <- reactiveValues(counter = 0, counter_feedback = 0)
     vals1 <- reactiveValues(text = "")
     vals2 <- reactiveValues(counter_feedback = 0)
@@ -139,8 +168,9 @@ server <- function(input, output, session) {
     observeEvent(input$button | input$feedback_button, {
         
         if (input$button) {
+            out$data$username[vals$counter] <- input$username
             out$data$text[vals$counter] <- input$text 
-            out$data$time[vals$counter] <- as.character("today")
+            out$data$time[vals$counter] <- as.character(sys.time())
             out$data$session[vals$counter] <- session$token
             
             if (vals$counter <= 0) {
@@ -153,8 +183,9 @@ server <- function(input, output, session) {
         }
         
         if (input$feedback_button) {
+            out$data$username[vals$counter] <- input$username
             out$data$feedback[vals$counter] <- input$feedback
-            out$data$time[vals$counter] <- as.character("today")
+            out$data$time[vals$counter] <- as.character(sys.time())
             out$data$session[vals$counter] <- session$token
             
             if (vals2$counter_feedback <= 0) {
@@ -170,7 +201,7 @@ server <- function(input, output, session) {
         vals$counter <- vals$counter + 1
         vals$counter <- vals$counter_feedback + 1
         
-        f <- str_c("logs/", "today", "-", round(runif(1) * 10000, 0), ".csv")
+        # f <- str_c("logs/", "today", "-", round(runif(1) * 10000, 0), ".csv")
         
         if (!file.exists("tmp-file.csv")) {
             write_csv(out$data, "tmp-file.csv")
@@ -183,12 +214,16 @@ server <- function(input, output, session) {
         }
         
     })
-
+    
     onSessionEnded(function() {
+        f <- str_c(Sys.time(), "-", round(runif(1) * 1000, 0), ".csv")
         data_to_write <- read_csv("tmp-file.csv")
-        boxr::box_write(data_to_write, dir_id = "119380520464", file_name = 'test.csv')
+        data_to_write <- filter(data_to_write, !is.na(session))
+        boxr::box_write(data_to_write, dir_id = "119380520464", file_name = f)
+        print("file written to FAAST server (on Box)")
+        file.remove("tmp-file.csv")
     })
-
+    
 }
 
 # Run the application 
